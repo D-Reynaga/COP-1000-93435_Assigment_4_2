@@ -1,0 +1,23 @@
+BEGIN
+
+    INPUT employee_name
+    INPUT number_of_shifts
+    INPUT number_of_transactions
+    INPUT transaction_dollar_value
+
+    SET productivity_score = (transaction_dollar_value / number_of_transactions) / number_of_shifts
+
+    IF productivity_score <= 30 THEN
+        SET bonus = 50.00
+    ELSE IF productivity_score <= 69 THEN 
+        SET bonus = 75.00
+    ELSE IF productivity_score <= 199 THEN
+        SET bonus = 100.00
+    ELSE
+        SET bonus = 200.00
+    END IF
+
+    PRINT "Employee Name: " + employee_name
+    PRINT "Employee Bonus: $" + bonus
+
+    END
